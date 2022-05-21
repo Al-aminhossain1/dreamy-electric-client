@@ -1,0 +1,50 @@
+[
+    {
+        "name": "electric drills",
+        "img": "https://i.ibb.co/tZz8NrZ/electric-drils.jpg",
+        "price": 50,
+        "description": "This is really helpful tools, it is very good the tools is cool",
+        "order-quantity": 10,
+        "available": 50
+    },
+    {
+        "name": "electric wires",
+        "img": "https://i.ibb.co/FHTRHQs/Electric-wires.jpg",
+        "price": 50,
+        "description": "This is really helpful tools, it is very good the tools is cool",
+        "order-quantity": 10,
+        "available": 50
+    },
+    {
+        "name": "multimeter",
+        "img": "https://i.ibb.co/GQ61hh8/multimeter.jpg",
+        "price": 50,
+        "description": "This is really helpful tools, it is very good the tools is cool",
+        "order-quantity": 10,
+        "available": 50
+    },
+    {
+        "name": "power saw",
+        "img": "https://i.ibb.co/PtN0Sry/power-saw.jpg",
+        "price": 50,
+        "description": "This is really helpful tools, it is very good the tools is cool",
+        "order-quantity": 10,
+        "available": 50
+    },
+    {
+        "name": "safety helmet",
+        "img": "https://i.ibb.co/3c0PmtZ/safety-helmet.jpg",
+        "price": 50,
+        "description": "This is really helpful tools, it is very good the tools is cool",
+        "order-quantity": 10,
+        "available": 50
+    },
+    {
+        "name": "safety glaves",
+        "img": "https://i.ibb.co/DzDK8CT/safety-gloves.jpg",
+        "price": 50,
+        "description": "This is really helpful tools, it is very good the tools is cool",
+        "order-quantity": 10,
+        "available": 50
+    }
+]
