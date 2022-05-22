@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 import auth from '../../firebase.init';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import SocialLogin from './SocialLogin';
 
 const SignUp = () => {
     const [
@@ -97,9 +98,9 @@ const SignUp = () => {
                         </div>
                         <input className='w-full max-w-xs btn' type="submit" value="Sign Up" />
                     </form>
-                    <p className='my-2'>Already have an account? <Link className='text-primary' to='/login'>Please login</Link></p>
+                    <p className='mt-2'>Already have an account? <Link className='text-primary' to='/login'>Please login</Link></p>
                     <div className="divider">OR</div>
-                    <button className="btn btn-primary">Continue with Google</button>
+                    <SocialLogin></SocialLogin>
 
                 </div>
             </div>

@@ -3,6 +3,7 @@ import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
+import SocialLogin from './SocialLogin';
 
 const Login = () => {
     const navigate = useNavigate();
@@ -83,10 +84,9 @@ const Login = () => {
                         </div>
                         <input className='w-full max-w-xs btn' type="submit" value="Login" />
                     </form>
-                    <p className='my-2'>New to Dreamy Electric? <Link className='text-primary' to='/signup'>Create an account</Link></p>
+                    <p className='mt-2'>New to Dreamy Electric? <Link className='text-primary' to='/signup'>Create an account</Link></p>
                     <div className="divider">OR</div>
-                    <button className="btn btn-primary">Continue with Google</button>
-
+                    <SocialLogin></SocialLogin>
                 </div>
             </div>
 
