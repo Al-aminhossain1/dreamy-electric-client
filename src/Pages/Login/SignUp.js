@@ -1,23 +1,50 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
+import auth from '../../firebase.init';
+import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 
-const Login = () => {
+const SignUp = () => {
+    const [
+        createUserWithEmailAndPassword,
+        user,
+        loading,
+        error,
+    ] = useCreateUserWithEmailAndPassword(auth);
     const {
         register,
         handleSubmit,
         formState: { errors },
     } = useForm();
     const onSubmit = (data) => {
+        createUserWithEmailAndPassword(data.email, data.password)
         console.log(data)
     };
     return (
         <div className='flex min-h-screen justify-center items-center '>
             <div class="card w-96   shadow-xl">
                 <div class="card-body justify-center">
-                    <h2 class=" text-center text-2xl font-medium ">Login</h2>
+                    <h2 class=" text-center text-2xl font-medium ">Sign Up</h2>
                     <form onSubmit={handleSubmit(onSubmit)}>
-
+                        <div class="form-control w-full max-w-xs">
+                            <label class="label">
+                                <span class="label-text">Name</span>
+                            </label>
+                            <input type="name"
+                                placeholder="Enter your name"
+                                class="input input-bordered w-full max-w-xs"
+                                {...register('name', {
+                                    required: {
+                                        value: true,
+                                        message: 'name is required'
+                                    }
+                                }
+                                )}
+                            />
+                            <label class="label">
+                                {errors.name?.type === 'required' && <span class="label-text-alt text-red-500">{errors.name?.message}</span>}
+                            </label>
+                        </div>
                         <div class="form-control w-full max-w-xs">
                             <label class="label">
                                 <span class="label-text">Email</span>
@@ -68,9 +95,9 @@ const Login = () => {
 
                             </label>
                         </div>
-                        <input className='w-full max-w-xs btn' type="submit" value="Login" />
+                        <input className='w-full max-w-xs btn' type="submit" value="Sign Up" />
                     </form>
-                    <p className='my-2'>New to Dreamy Electric? <Link className='text-primary' to='/signup'>Create an account</Link></p>
+                    <p className='my-2'>Already have an account? <Link className='text-primary' to='/login'>Please login</Link></p>
                     <div class="divider">OR</div>
                     <button class="btn btn-primary">Continue with Google</button>
 
@@ -81,4 +108,4 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default SignUp;
