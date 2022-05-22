@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Tool = ({ tool }) => {
     const { name, price, img, description, available } = tool;
@@ -11,7 +12,7 @@ const Tool = ({ tool }) => {
                 <p>Price: ${price}</p>
                 <p>Available: {available}</p>
                 <div class="card-actions  justify-center">
-                    <button class="btn btn-success w-full">Order</button>
+                    <Link to='/purchase'><button class="btn btn-success w-full">Order</button></Link>
                 </div>
             </div>
             {/* "https://api.lorem.space/image/movie?w=200&h=280" */}
