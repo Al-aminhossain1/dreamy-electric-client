@@ -1,26 +1,37 @@
 import React from 'react';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
+import Loading from '../Shared/Loading';
 import SocialLogin from './SocialLogin';
 
 const Login = () => {
     const navigate = useNavigate();
+    const location = useLocation();
+    let from = location.state?.from?.pathname || "/";
     const [
         signInWithEmailAndPassword,
         user,
         loading,
         error,
     ] = useSignInWithEmailAndPassword(auth);
+    let errorMessage;
     const {
         register,
         handleSubmit,
         formState: { errors },
     } = useForm();
-    if (user) {
-        navigate('/')
+    if (error) {
+        errorMessage = <p className='text-red-500 text-xs m-1'>{error.message}</p>
     }
+    if (loading) {
+        <Loading></Loading>
+    }
+    if (user) {
+        navigate(from, { replace: true });
+    }
+    // from submit and login
     const onSubmit = (data) => {
         signInWithEmailAndPassword(data.email, data.password)
         console.log(data)
@@ -82,6 +93,7 @@ const Login = () => {
 
                             </label>
                         </div>
+                        {errorMessage}
                         <input className='w-full max-w-xs btn' type="submit" value="Login" />
                     </form>
                     <p className='mt-2'>New to Dreamy Electric? <Link className='text-primary' to='/signup'>Create an account</Link></p>

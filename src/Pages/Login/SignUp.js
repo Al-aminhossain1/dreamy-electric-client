@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import auth from '../../firebase.init';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import SocialLogin from './SocialLogin';
+import Loading from '../Shared/Loading';
 
 const SignUp = () => {
     const [
@@ -17,6 +18,13 @@ const SignUp = () => {
         handleSubmit,
         formState: { errors },
     } = useForm();
+    let errorMessage;
+    if (error) {
+        errorMessage = <p className='text-red-500 text-xs m-1'>{error.message}</p>
+    }
+    if (loading) {
+        <Loading></Loading>
+    }
     const onSubmit = (data) => {
         createUserWithEmailAndPassword(data.email, data.password)
         console.log(data)
@@ -96,6 +104,7 @@ const SignUp = () => {
 
                             </label>
                         </div>
+                        {errorMessage}
                         <input className='w-full max-w-xs btn' type="submit" value="Sign Up" />
                     </form>
                     <p className='mt-2'>Already have an account? <Link className='text-primary' to='/login'>Please login</Link></p>
