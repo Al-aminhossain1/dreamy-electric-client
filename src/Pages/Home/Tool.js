@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Tool = ({ tool }) => {
-    const { name, price, img, description, available } = tool;
+    const { name, price, img, description, available, _id } = tool;
     return (
         <div className="card card-side  shadow-xl">
             <figure><img src={img} alt="Movie" /></figure>
@@ -11,11 +11,11 @@ const Tool = ({ tool }) => {
                 <p>{description}</p>
                 <p>Price: ${price}</p>
                 <p>Available: {available}</p>
+                <p>Available: {_id}</p>
                 <div className="card-actions  justify-center">
-                    <Link to='/purchase'><button className="btn btn-success w-full">Order</button></Link>
+                    <Link to={`/purchase/${_id}`}><button className="btn btn-success w-full">Order</button></Link>
                 </div>
             </div>
-            {/* "https://api.lorem.space/image/movie?w=200&h=280" */}
         </div>
     );
 };

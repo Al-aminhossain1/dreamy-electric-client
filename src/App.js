@@ -16,7 +16,7 @@ function App() {
       <Navbar></Navbar>
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
-        <Route path='/purchase' element={<RequireAuth>
+        <Route path='/purchase/:id' element={<RequireAuth>
           <Purchase></Purchase>
         </RequireAuth>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>

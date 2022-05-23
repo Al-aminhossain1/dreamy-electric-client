@@ -1,5 +1,6 @@
 [
     {
+        "id": 1,
         "name": "electric drills",
         "img": "https://i.ibb.co/tZz8NrZ/electric-drils.jpg",
         "price": 50,
@@ -8,6 +9,7 @@
         "available": 50
     },
     {
+        "id": 2,
         "name": "electric wires",
         "img": "https://i.ibb.co/FHTRHQs/Electric-wires.jpg",
         "price": 50,
@@ -16,6 +18,7 @@
         "available": 50
     },
     {
+        "id": 3,
         "name": "multimeter",
         "img": "https://i.ibb.co/GQ61hh8/multimeter.jpg",
         "price": 50,
@@ -24,6 +27,7 @@
         "available": 50
     },
     {
+        "id": 4,
         "name": "power saw",
         "img": "https://i.ibb.co/PtN0Sry/power-saw.jpg",
         "price": 50,
@@ -32,6 +36,7 @@
         "available": 50
     },
     {
+        "id": 5,
         "name": "safety helmet",
         "img": "https://i.ibb.co/3c0PmtZ/safety-helmet.jpg",
         "price": 50,
@@ -40,6 +45,7 @@
         "available": 50
     },
     {
+        "id": 6,
         "name": "safety glaves",
         "img": "https://i.ibb.co/DzDK8CT/safety-gloves.jpg",
         "price": 50,
