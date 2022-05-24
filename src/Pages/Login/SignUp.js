@@ -1,6 +1,6 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import SocialLogin from './SocialLogin';
@@ -18,12 +18,16 @@ const SignUp = () => {
         handleSubmit,
         formState: { errors },
     } = useForm();
+    const navigate = useNavigate();
     let errorMessage;
     if (error) {
         errorMessage = <p className='text-red-500 text-xs m-1'>{error.message}</p>
     }
     if (loading) {
         <Loading></Loading>
+    }
+    if (user) {
+        navigate('/purchase')
     }
     const onSubmit = (data) => {
         createUserWithEmailAndPassword(data.email, data.password)

@@ -1,5 +1,6 @@
 
 import { Route, Routes } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
 import './App.css';
 import Blog from './Pages/Blog/Blog';
 import AddReview from './Pages/Dashboard/AddReview';
@@ -36,6 +37,7 @@ function App() {
         </Route>
         {/* <Route path='/' element={ }></Route> */}
       </Routes>
+      <ToastContainer />
     </div>
   );
 }
