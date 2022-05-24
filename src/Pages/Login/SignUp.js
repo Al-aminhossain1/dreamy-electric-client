@@ -27,7 +27,7 @@ const SignUp = () => {
         <Loading></Loading>
     }
     if (user) {
-        navigate('/purchase')
+        navigate('/dashboard')
     }
     const onSubmit = (data) => {
         createUserWithEmailAndPassword(data.email, data.password)

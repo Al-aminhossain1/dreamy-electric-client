@@ -1,19 +1,32 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import ProfileModal from './ProfileModal';
 
 const MyProfile = () => {
-    const [profile, setProfile] = useState(null);
     const [user] = useAuthState(auth);
+    const [profile, setProfile] = useState(null);
+    useEffect(() => {
+        if (user) {
+            fetch(`http://localhost:5000/user/${user.email}`)
+                .then(res => res.json())
+                .then(data => setProfile(data))
+        }
+
+    }, [user, profile])
+
     return (
         <div>
-            <div className=''>
-                <h1 className='text-xl font-medium text-green-500'>Please add Update your profile</h1>
-                <label for="profile-modal" onClick={() => setProfile(user)} class=" btn btn-accent text-white btn-sm">Update Profile</label>
-
+            <div className='font-medium text-lg grid grid-cols-1 gap-3 '>
+                <h1 className='text-xl font-medium text-green-500'>Name: {profile?.name}</h1>
+                <p>Location: {profile?.address}</p>
+                <p>Education: {profile?.education}</p>
+                <p>Phone Number:{profile?.phone}</p>
+                <p>LinkedIn Profile:{profile?.linkedin}</p>
 
             </div>
+            <label for="profile-modal" onClick={() => setProfile(user)} class=" btn btn-accent  text-white btn-sm m-3 p-2">Update Profile</label>
+
             {
                 profile && <ProfileModal
                     profile={profile}

@@ -42,7 +42,7 @@ const ProfileModal = ({ profile }) => {
                     <form className='' onSubmit={handelUpdateProfile}>
                         <input type="text" name='name' disabled value={profile?.displayName} class="input my-2 input-bordered w-full max-w-xs" />
                         <input type="email" name='email' disabled value={profile?.email} class="input my-2 input-bordered w-full max-w-xs" />
-                        <input type="text" name='address' placeholder="Enter you Address" class="input my-2 input-bordered w-full max-w-xs" />
+                        <input type="text" name='address' placeholder="Enter you Location" class="input my-2 input-bordered w-full max-w-xs" />
                         <input type="text" name='phone' placeholder="Phone Number" class="input my-2 input-bordered w-full max-w-xs" />
                         <input type="text" name='education' placeholder='Educational Qualification' class="input my-2 input-bordered w-full max-w-xs" />
                         <input type='url' name='linkedin' placeholder="Add your linkedIn profile" class="input my-2 input-bordered w-full max-w-xs" />
