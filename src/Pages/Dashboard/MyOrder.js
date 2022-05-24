@@ -42,7 +42,6 @@ const MyOrder = () => {
                             </tr>)
                         }
 
-
                     </tbody>
                 </table>
             </div>
