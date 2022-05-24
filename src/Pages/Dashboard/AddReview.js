@@ -12,8 +12,20 @@ const AddReview = () => {
         const description = event.target.description.value;
         const review = { name, rating, description };
         console.log(review);
-        toast("Thanks for your Review")
-        event.target.reset();
+        fetch('http://localhost:5000/review', {
+            method: "POST",
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(review)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                toast("Thanks for your Review")
+                event.target.reset();
+            })
+
     }
     return (
         <div className='flex justify-center '>

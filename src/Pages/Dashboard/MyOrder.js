@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
+import DeleteModal from './DeleteModal';
 
 const MyOrder = () => {
     const [user] = useAuthState(auth);
     const [orders, setOrders] = useState([]);
+    const [delute, setDelute] = useState(null);
     useEffect(() => {
         if (user) {
             fetch(`http://localhost:5000/order?customer=${user.email}`)
@@ -28,6 +30,8 @@ const MyOrder = () => {
                             <th>Email</th>
                             <th>Name</th>
                             <th>Tool</th>
+                            <th>Status</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -39,12 +43,17 @@ const MyOrder = () => {
                                 <td>{user?.email}</td>
                                 <td>{user?.displayName}</td>
                                 <td>{order.tool}</td>
+                                <td><button class="btn btn-accent btn-xs">pay</button></td>
+                                <td><label for="delete-modal" onClick={() => setDelute(order)} class="modal-button btn btn-error text-white btn-xs">Delete Order</label> </td>
                             </tr>)
                         }
 
                     </tbody>
                 </table>
             </div>
+            {
+                delute && <DeleteModal delute={delute}></DeleteModal>
+            }
         </div>
     );
 };
