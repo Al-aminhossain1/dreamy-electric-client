@@ -1,8 +1,19 @@
 import React from 'react';
 
 const DeleteModal = ({ delute }) => {
+    const { tool, _id } = delute;
     const deleteOrder = () => {
-        console.log('sala dure giya mor tor kono dorkar nai amamr');
+        fetch(`http://localhost:5000/order/${_id}`, {
+            method: "DELETE",
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify()
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+            })
     }
     return (
         <div>
@@ -12,8 +23,9 @@ const DeleteModal = ({ delute }) => {
 
                 <div class="modal-box">
                     <label for="delete-modal" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
-                    <h3 class="text-accent text-center font-bold text-2xl">{delute.tool}</h3>
-                    <p class="py-4">Are You sure want to delete {delute.tool}</p>
+                    <h3 class="text-accent text-center font-bold text-2xl">{tool}</h3>
+                    <p class="py-4">Are You sure want to delete {tool}</p>
+                    <p class="py-4">order Id: {_id}</p>
                     <div class="modal-action">
                         <label onClick={deleteOrder} for="delete-modal" class="btn">Yay!</label>
                     </div>
