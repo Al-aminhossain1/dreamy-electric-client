@@ -16,7 +16,7 @@ const MyOrder = () => {
                     setOrders(data)
                 })
         }
-    }, [user])
+    }, [user, orders])
     return (
         <div>
             <h1 className=' text-cyan-500 my-2 ' >Your total order: {orders.length}</h1>

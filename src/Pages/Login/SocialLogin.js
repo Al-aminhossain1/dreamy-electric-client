@@ -11,7 +11,7 @@ const SocialLogin = () => {
         <Loading></Loading>
     }
     if (user) {
-        navigate('/purchase')
+        navigate('/dashboard')
     }
     const handelGoogleSignin = () => {
         signInWithGoogle();
