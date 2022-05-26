@@ -14,7 +14,7 @@ const ContactForm = () => {
                 <input type="email" placeholder="Email Address" className="input my-5 w-full max-w-lg" required /> <br />
                 <input type="text" placeholder="Subject" className="input w-full max-w-lg" required /><br />
                 <textarea style={{ height: '148px' }} className="textarea w-full max-w-lg mt-5" placeholder="Your Message" required></textarea><br />
-                <input className='btn btn-accent w-full max-w-lg text-white' type="submit" value="Submit"></input>
+                <input className='btn btn-accent w-full max-w-lg text-white my-5' type="submit" value="Submit"></input>
             </form>
         </div>
     );
