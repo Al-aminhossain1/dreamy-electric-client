@@ -7,7 +7,6 @@ const Review = () => {
             .then(res => res.json())
             .then(data => {
                 setReviews(data);
-                console.log(data);
             })
     }, [])
 
@@ -23,12 +22,12 @@ const Review = () => {
                                 <div className=' pl-3 justify-center items-center'>
                                     <h1>{review?.name}</h1>
                                     <p>{review?.location}</p>
-                                    <p>Rating: <div class="rating rating-sm">
-                                        <input type="radio" name="rating-1" class="mask mask-star" />
-                                        <input type="radio" name="rating-1" class="mask mask-star" checked />
-                                        <input type="radio" name="rating-1" class="mask mask-star" />
-                                        <input type="radio" name="rating-1" class="mask mask-star" />
-                                        <input type="radio" name="rating-1" class="mask mask-star" />
+                                    <p>Rating: <div className="rating rating-sm">
+                                        <input type="radio" name="rating-1" className="mask mask-star" />
+                                        <input type="radio" name="rating-1" className="mask mask-star" checked />
+                                        <input type="radio" name="rating-1" className="mask mask-star" />
+                                        <input type="radio" name="rating-1" className="mask mask-star" />
+                                        <input type="radio" name="rating-1" className="mask mask-star" />
                                     </div></p>
                                 </div>
                             </div>
