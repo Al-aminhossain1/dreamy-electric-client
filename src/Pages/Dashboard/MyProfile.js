@@ -8,7 +8,7 @@ const MyProfile = () => {
     const [profile, setProfile] = useState(null);
     useEffect(() => {
         if (user) {
-            fetch(`http://localhost:5000/user/${user.email}`)
+            fetch(`https://radiant-shelf-47828.herokuapp.com/user/${user.email}`)
                 .then(res => res.json())
                 .then(data => setProfile(data))
         }

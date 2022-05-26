@@ -6,13 +6,12 @@ import DeleteModal from './DeleteModal';
 const MyOrder = () => {
     const [user] = useAuthState(auth);
     const [orders, setOrders] = useState([]);
-    const [delute, setDelute] = useState(null);
+    const [remove, setRemove] = useState(null);
     useEffect(() => {
         if (user) {
-            fetch(`http://localhost:5000/order?customer=${user.email}`)
+            fetch(`https://radiant-shelf-47828.herokuapp.com/order?customer=${user.email}`)
                 .then(res => res.json())
                 .then(data => {
-                    console.log(data);
                     setOrders(data)
                 })
         }
@@ -44,7 +43,7 @@ const MyOrder = () => {
                                 <td>{user?.displayName}</td>
                                 <td>{order.tool}</td>
                                 <td><button class="btn btn-accent btn-xs">pay</button></td>
-                                <td><label for="delete-modal" onClick={() => setDelute(order)} class="modal-button btn btn-error text-white btn-xs">Delete Order</label> </td>
+                                <td><label for="delete-modal" onClick={() => setRemove(order)} class="modal-button btn btn-error text-white btn-xs">Delete Order</label> </td>
                             </tr>)
                         }
 
@@ -52,7 +51,7 @@ const MyOrder = () => {
                 </table>
             </div>
             {
-                delute && <DeleteModal delute={delute}></DeleteModal>
+                remove && <DeleteModal remove={remove}></DeleteModal>
             }
         </div>
     );

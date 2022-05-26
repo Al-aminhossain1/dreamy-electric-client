@@ -6,12 +6,12 @@ const User = () => {
     const [user] = useAuthState(auth);
     const [users, setUsers] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/user')
+        fetch('https://radiant-shelf-47828.herokuapp.com/user')
             .then(res => res.json())
             .then(data => setUsers(data))
     }, [])
     const handelMakeAdmin = () => {
-        fetch(`http://localhost:5000/user/admin/${user.email}`, {
+        fetch(`https://radiant-shelf-47828.herokuapp.com/user/admin/${user.email}`, {
             method: "PUT",
             headers: {
                 'content-type': 'application/json'

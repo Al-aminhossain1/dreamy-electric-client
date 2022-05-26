@@ -12,7 +12,7 @@ const AddReview = () => {
         const description = event.target.description.value;
         const review = { name, rating, description };
         console.log(review);
-        fetch('http://localhost:5000/review', {
+        fetch('https://radiant-shelf-47828.herokuapp.com/review', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'

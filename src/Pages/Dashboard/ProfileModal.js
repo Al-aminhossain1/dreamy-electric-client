@@ -15,7 +15,7 @@ const ProfileModal = ({ profile }) => {
         const linkedin = event.target.linkedin.value;
         const education = event.target.education.value;
         const profile = { name, email, address, phone, linkedin, education };
-        fetch(`http://localhost:5000/user/${profile.email}`, {
+        fetch(`https://radiant-shelf-47828.herokuapp.com/user/${profile.email}`, {
             method: "PUT",
             headers: {
                 'content-type': 'application/json'

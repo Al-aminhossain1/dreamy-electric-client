@@ -1,9 +1,9 @@
 import React from 'react';
 
-const DeleteModal = ({ delute }) => {
-    const { tool, _id } = delute;
+const DeleteModal = ({ remove }) => {
+    const { tool, _id } = remove;
     const deleteOrder = () => {
-        fetch(`http://localhost:5000/order/${_id}`, {
+        fetch(`https://radiant-shelf-47828.herokuapp.com/order/${_id}`, {
             method: "DELETE",
             headers: {
                 'content-type': 'application/json'

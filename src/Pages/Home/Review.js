@@ -6,7 +6,7 @@ import people3 from '../../asets/image/people3.png'
 const Review = () => {
     const [reviews, setReviews] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/review')
+        fetch('https://radiant-shelf-47828.herokuapp.com/review')
             .then(res => res.json())
             .then(data => {
                 setReviews(data);
