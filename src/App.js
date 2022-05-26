@@ -12,6 +12,7 @@ import Home from './Pages/Home/Home';
 import Login from './Pages/Login/Login';
 import RequireAuth from './Pages/Login/RequireAuth';
 import SignUp from './Pages/Login/SignUp';
+import MyPortfolio from './Pages/Portfolio/MyPortfolio';
 
 import Purchase from './Pages/Purchase/Purchase';
 import Navbar from './Pages/Shared/Navbar';
@@ -37,6 +38,7 @@ function App() {
           <Route path='addReview' element={<AddReview></AddReview>}></Route>
           <Route path='user' element={<User></User>}></Route>
         </Route>
+        <Route path='/portfolio' element={<MyPortfolio></MyPortfolio>}></Route>
         {/* <Route path='/' element={ }></Route> */}
       </Routes>
       <ToastContainer />
