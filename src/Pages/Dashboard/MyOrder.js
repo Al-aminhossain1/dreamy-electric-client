@@ -20,8 +20,8 @@ const MyOrder = () => {
         <div>
             <h1 className=' text-cyan-500 my-2 ' >Your total order: {orders.length}</h1>
 
-            <div class="overflow-x-auto">
-                <table class="table w-full">
+            <div className="overflow-x-auto">
+                <table className="table w-full">
                     {/* <!-- head --> */}
                     <thead>
                         <tr>
@@ -42,8 +42,8 @@ const MyOrder = () => {
                                 <td>{user?.email}</td>
                                 <td>{user?.displayName}</td>
                                 <td>{order.tool}</td>
-                                <td><button class="btn btn-accent btn-xs">pay</button></td>
-                                <td><label for="delete-modal" onClick={() => setRemove(order)} class="modal-button btn btn-error text-white btn-xs">Delete Order</label> </td>
+                                <td><button className="btn btn-accent btn-xs">pay</button></td>
+                                <td><label htmlFor="delete-modal" onClick={() => setRemove(order)} className="modal-button btn btn-error text-white btn-xs">Delete Order</label> </td>
                             </tr>)
                         }
 

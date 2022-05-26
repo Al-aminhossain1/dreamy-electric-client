@@ -29,15 +29,15 @@ const AddReview = () => {
     }
     return (
         <div className='flex justify-center '>
-            <div class="card w-96 bg-base-100 shadow-xl">
-                <div class="card-body">
-                    <h2 class="text-center text-xl text-cyan-500 font-semibold">Please Give your review</h2>
+            <div className="card w-96 bg-base-100 shadow-xl">
+                <div className="card-body">
+                    <h2 className="text-center text-xl text-cyan-500 font-semibold">Please Give your review</h2>
                     {/* <p>{tool.description}</p> */}
                     <form onSubmit={handelAddReview}>
-                        <input type="text" name='name' disabled value={user?.displayName} class="input my-2 input-bordered w-full max-w-xs" />
-                        <input type="text" name='rating' placeholder="review rating" class="input my-2 input-bordered w-full max-w-xs" />
-                        <textarea name='description' class="textarea textarea-bordered w-full max-w-xs" placeholder="Review"></textarea>
-                        <input type="submit" value="Review" class=" btn my-2 input-bordered w-full max-w-xs" />
+                        <input type="text" name='name' disabled value={user?.displayName} className="input my-2 input-bordered w-full max-w-xs" />
+                        <input type="text" name='rating' placeholder="review rating" className="input my-2 input-bordered w-full max-w-xs" />
+                        <textarea name='description' className="textarea textarea-bordered w-full max-w-xs" placeholder="Review"></textarea>
+                        <input type="submit" value="Review" className=" btn my-2 input-bordered w-full max-w-xs" />
                     </form>
                 </div>
             </div>

@@ -18,16 +18,16 @@ const DeleteModal = ({ remove }) => {
     return (
         <div>
             {/* <!-- Put this part before </body> tag --> */}
-            <input type="checkbox" id="delete-modal" class="modal-toggle" />
-            <div class="modal">
+            <input type="checkbox" id="delete-modal" className="modal-toggle" />
+            <div className="modal">
 
-                <div class="modal-box">
-                    <label for="delete-modal" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
-                    <h3 class="text-accent text-center font-bold text-2xl">{tool}</h3>
-                    <p class="py-4">Are You sure want to delete {tool}</p>
-                    <p class="py-4">order Id: {_id}</p>
-                    <div class="modal-action">
-                        <label onClick={deleteOrder} for="delete-modal" class="btn">Yay!</label>
+                <div className="modal-box">
+                    <label htmlFor="delete-modal" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+                    <h3 className="text-accent text-center font-bold text-2xl">{tool}</h3>
+                    <p className="py-4">Are You sure want to delete {tool}</p>
+                    <p className="py-4">order Id: {_id}</p>
+                    <div className="modal-action">
+                        <label onClick={deleteOrder} htmlFor="delete-modal" className="btn">Yay!</label>
                     </div>
                 </div>
             </div>

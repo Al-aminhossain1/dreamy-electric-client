@@ -25,7 +25,7 @@ const MyProfile = () => {
                 <p>LinkedIn Profile:{profile?.linkedin}</p>
 
             </div>
-            <label for="profile-modal" onClick={() => setProfile(user)} class=" btn btn-accent  text-white btn-sm m-3 p-2">Update Profile</label>
+            <label htmlFor="profile-modal" onClick={() => setProfile(user)} className=" btn btn-accent  text-white btn-sm m-3 p-2">Update Profile</label>
 
             {
                 profile && <ProfileModal

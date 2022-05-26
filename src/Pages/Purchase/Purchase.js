@@ -48,19 +48,19 @@ const Purchase = () => {
     }
     return (
         <div className='flex justify-center '>
-            <div class="card w-96 bg-base-100 shadow-xl">
-                <div class="card-body">
-                    <h2 class="text-center text-xl text-primary font-bold">{tool.name}</h2>
+            <div className="card w-96 bg-base-100 shadow-xl">
+                <div className="card-body">
+                    <h2 className="text-center text-xl text-primary font-bold">{tool.name}</h2>
                     <p>{tool.description}</p>
                     <p>Available: {tool.available}</p>
                     <form onSubmit={confirmOrdered}>
-                        <input type="text" name='user' disabled value={user?.displayName} class="input my-2 input-bordered w-full max-w-xs" />
-                        <input type="email" name='customer' disabled value={user?.email} class="input my-2 input-bordered w-full max-w-xs" />
-                        <input type="text" name='address' placeholder="Enter you Address" class="input my-2 input-bordered w-full max-w-xs" />
-                        <input type="text" name='phone' placeholder="Phone Number" class="input my-2 input-bordered w-full max-w-xs" />
-                        <input type="text" name='tool' disabled value={tool.name} class="input my-2 input-bordered w-full max-w-xs" />
-                        <input type="number" disabled value={tool.available} class="input my-2 input-bordered w-full max-w-xs" />
-                        <input type="number" name='order' placeholder="Minimum order 10" class="input my-2 input-bordered w-full max-w-xs" />
+                        <input type="text" name='user' disabled value={user?.displayName} className="input my-2 input-bordered w-full max-w-xs" />
+                        <input type="email" name='customer' disabled value={user?.email} className="input my-2 input-bordered w-full max-w-xs" />
+                        <input type="text" name='address' placeholder="Enter you Address" className="input my-2 input-bordered w-full max-w-xs" />
+                        <input type="text" name='phone' placeholder="Phone Number" className="input my-2 input-bordered w-full max-w-xs" />
+                        <input type="text" name='tool' disabled value={tool.name} className="input my-2 input-bordered w-full max-w-xs" />
+                        <input type="number" disabled value={tool.available} className="input my-2 input-bordered w-full max-w-xs" />
+                        <input type="number" name='order' placeholder="Minimum order 10" className="input my-2 input-bordered w-full max-w-xs" />
                         {errorMessage}
                         {errorMessage ? <input disabled type="submit" className='btn my-2 w-full max-w-xs' value="purchase" /> : <input type="submit" className='btn my-2 w-full max-w-xs' value="purchase" />}
                     </form>

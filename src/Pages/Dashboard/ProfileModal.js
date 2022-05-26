@@ -34,21 +34,21 @@ const ProfileModal = ({ profile }) => {
     }
     return (
         <div>
-            <input type="checkbox" id="profile-modal" class="modal-toggle" />
-            <div class="modal">
+            <input type="checkbox" id="profile-modal" className="modal-toggle" />
+            <div className="modal">
 
-                <div class="modal-box text-center">
-                    <label for="profile-modal" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+                <div className="modal-box text-center">
+                    <label htmlFor="profile-modal" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
                     <form className='' onSubmit={handelUpdateProfile}>
-                        <input type="text" name='name' disabled value={profile?.displayName} class="input my-2 input-bordered w-full max-w-xs" />
-                        <input type="email" name='email' disabled value={profile?.email} class="input my-2 input-bordered w-full max-w-xs" />
-                        <input type="text" name='address' placeholder="Enter you Location" class="input my-2 input-bordered w-full max-w-xs" />
-                        <input type="text" name='phone' placeholder="Phone Number" class="input my-2 input-bordered w-full max-w-xs" />
-                        <input type="text" name='education' placeholder='Educational Qualification' class="input my-2 input-bordered w-full max-w-xs" />
-                        <input type='url' name='linkedin' placeholder="Add your linkedIn profile" class="input my-2 input-bordered w-full max-w-xs" />
-                        {/* <label for="profile-modal" class="btn w-full max-w-xs">submit</label> */}
+                        <input type="text" name='name' disabled value={profile?.displayName} className="input my-2 input-bordered w-full max-w-xs" />
+                        <input type="email" name='email' disabled value={profile?.email} className="input my-2 input-bordered w-full max-w-xs" />
+                        <input type="text" name='address' placeholder="Enter you Location" className="input my-2 input-bordered w-full max-w-xs" />
+                        <input type="text" name='phone' placeholder="Phone Number" className="input my-2 input-bordered w-full max-w-xs" />
+                        <input type="text" name='education' placeholder='Educational Qualification' className="input my-2 input-bordered w-full max-w-xs" />
+                        <input type='url' name='linkedin' placeholder="Add your linkedIn profile" className="input my-2 input-bordered w-full max-w-xs" />
+                        {/* <label htmlFor="profile-modal" className="btn w-full max-w-xs">submit</label> */}
                         <input type="submit" className='btn my-2 input-bordered w-full max-w-xs' value="submit" />
-                        <div class="  modal-action flex justify-center">
+                        <div className="  modal-action flex justify-center">
 
                         </div>
                     </form>
