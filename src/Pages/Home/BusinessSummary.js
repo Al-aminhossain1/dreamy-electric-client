@@ -11,7 +11,7 @@ const BusinessSummary = () => {
             <div className='grid grid-cols-1 lg:grid-cols-4 gap-4'>
                 <div className="card w-80 bg-base-100 shadow-xl">
                     <figure className=" pt-2">
-                        <img src={countries} alt="Shoes" className="rounded-xl" />
+                        <img src={countries} alt="Shoes" className="w-40 rounded-xl" />
                     </figure>
                     <div className="card-body items-center text-center">
                         <h2 className="card-title text-5xl text-cyan-600">47+</h2>
@@ -20,7 +20,7 @@ const BusinessSummary = () => {
                 </div>
                 <div className="card w-80 bg-base-100 shadow-xl">
                     <figure className=" pt-5">
-                        <img src={client} alt="Shoes" className="rounded-xl" />
+                        <img src={client} alt="Shoes" className="w-40 rounded-xl" />
                     </figure>
                     <div className="card-body items-center text-center">
                         <h2 className="card-title text-5xl text-cyan-600">213+</h2>
@@ -29,7 +29,7 @@ const BusinessSummary = () => {
                 </div>
                 <div className="card w-80 bg-base-100 shadow-xl">
                     <figure className=" pt-5">
-                        <img src={project} alt="Shoes" className="rounded-xl" />
+                        <img src={project} alt="Shoes" className="w-40 rounded-xl" />
                     </figure>
                     <div className="card-body items-center text-center">
                         <h2 className="card-title text-5xl text-cyan-600">317+</h2>
@@ -38,7 +38,7 @@ const BusinessSummary = () => {
                 </div>
                 <div className="card w-80 bg-base-100 shadow-xl">
                     <figure className=" pt-10">
-                        <img src={feedback} alt="Shoes" className="rounded-xl" />
+                        <img src={feedback} alt="Shoes" className="w-40 rounded-xl" />
                     </figure>
                     <div className="card-body items-center text-center mt-5">
                         <h2 className="card-title text-5xl text-cyan-600">350+</h2>
