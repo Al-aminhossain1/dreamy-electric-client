@@ -10,8 +10,8 @@ const Tool = ({ tool }) => {
                 <h2 className="card-title text-purple-900 text-semibold">{name}</h2>
                 <p>{description}</p>
                 <p>Price: ${price}</p>
-                <p>Available: {available}</p>
-                <p>Available: {_id}</p>
+                <p>Available Quantity: {available}</p>
+                <p>Minimum order:100</p>
                 <div className="card-actions  justify-center">
                     <Link to={`/purchase/${_id}`}><button className="btn btn-success w-full">Order</button></Link>
                 </div>
