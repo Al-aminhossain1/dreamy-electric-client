@@ -13,7 +13,7 @@ const Tool = ({ tool }) => {
                 <p>Available Quantity: {available}</p>
                 <p>Minimum order:100</p>
                 <div className="card-actions  justify-center">
-                    <Link to={`/purchase/${_id}`}><button className="btn btn-success w-full">Order</button></Link>
+                    <Link to={`/purchase/${_id}`}><button className="btn btn-success w-36 text-white">Order</button></Link>
                 </div>
             </div>
         </div>

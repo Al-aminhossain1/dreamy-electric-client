@@ -6,7 +6,7 @@ import project from '../../asets/icon/project.png'
 
 const BusinessSummary = () => {
     return (
-        <div className='my-10 px-10'>
+        <div className='my-10 px-5'>
             <h1 className='text-4xl text-accent font-medium text-center my-10'>Happy Clients With us</h1>
             <div className='grid grid-cols-1 lg:grid-cols-4 gap-4'>
                 <div className="card w-80 bg-base-100 shadow-xl">

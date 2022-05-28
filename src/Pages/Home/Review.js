@@ -11,11 +11,11 @@ const Review = () => {
     }, [])
 
     return (
-        <div className='p-10'>
+        <div className='p-5'>
             <h1 className='text-3xl font-semibold text-center text-cyan-400'>Our Customer Says</h1>
             <div className='grid grid-cols-1 lg:grid-cols-3 gap-3 my-10'>
                 {
-                    reviews.map(review => <div className="card px-10 w-80 bg-base-100 shadow-xl">
+                    reviews.map(review => <div className="card  w-80 bg-base-100 shadow-xl">
                         <div className="card-body">
                             <p>{review.description}</p>
                             <div className="card-actions mt-3">
