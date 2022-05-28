@@ -1,32 +1,23 @@
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { useQuery } from 'react-query';
 import auth from '../../firebase.init';
+import MakeAdmin from './MakeAdmin';
+import Loading from '../Shared/Loading'
 
 const User = () => {
-    const [user] = useAuthState(auth);
-    const [users, setUsers] = useState([]);
-    useEffect(() => {
-        fetch('https://radiant-shelf-47828.herokuapp.com/user')
-            .then(res => res.json())
-            .then(data => setUsers(data))
-    }, [])
-    const handelMakeAdmin = () => {
-        fetch(`https://radiant-shelf-47828.herokuapp.com/user/admin/${user.email}`, {
-            method: "PUT",
-            headers: {
-                'content-type': 'application/json'
-            }
-        })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data);
-            })
+    // const [user] = useAuthState(auth);
+    const { data: users, loading, refetch } = useQuery('users', () => fetch('https://radiant-shelf-47828.herokuapp.com/user').then(res => res.json()))
+    if (loading) {
+        return <Loading></Loading>
     }
+
     return (
         <div>
-            <h1>Total User:{users.length}</h1>
+            <h1>Total User:{users?.length}</h1>
+
             <div className="overflow-x-auto">
-                <table className="table w-full">
+                <table className="table w-full table-normal">
 
                     <thead>
                         <tr>
@@ -39,13 +30,12 @@ const User = () => {
                     </thead>
                     <tbody>
                         {
-                            users.map((user, index) => <tr>
-                                <th>{index + 1}</th>
-                                <td>{user.email}</td>
-                                <td>{user.address}</td>
-                                <td>{user.phone}</td>
-                                <td><button onClick={handelMakeAdmin} className='btn btn-xs'>Make Admin</button></td>
-                            </tr>)
+                            users?.map((user, index) => <MakeAdmin
+                                key={user._id}
+                                user={user}
+                                index={index}
+                                refetch={refetch}
+                            ></MakeAdmin>)
                         }
 
                     </tbody>
