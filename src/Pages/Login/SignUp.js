@@ -5,6 +5,7 @@ import auth from '../../firebase.init';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import SocialLogin from './SocialLogin';
 import Loading from '../Shared/Loading';
+import useToken from '../../hooks/useToken';
 
 const SignUp = () => {
     const [
@@ -18,6 +19,7 @@ const SignUp = () => {
         handleSubmit,
         formState: { errors },
     } = useForm();
+    const [token] = useToken(user);
     const navigate = useNavigate();
     let errorMessage;
     if (error) {
